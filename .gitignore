@@ -16,5 +16,8 @@ Thumbs.db
 #Clion
 cmake-build-debug
 CMakeLists.txt
+
+#Pycharm
+venv
 # Visual Studio Code
 .vscode/
