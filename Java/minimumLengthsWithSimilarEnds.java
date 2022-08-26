@@ -1,7 +1,7 @@
 // Leet Code : Minimum Length of String After Deleting Similar Ends , No . 1750
 // Link : https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/
 
-class Solution {
+class minimumLengthsWithSimilarEnds {
     public int minimumLength(String s) {
         if(s.length()==1){
             return 1;

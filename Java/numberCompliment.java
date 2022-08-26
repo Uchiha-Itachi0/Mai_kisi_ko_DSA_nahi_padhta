@@ -3,7 +3,7 @@
 
 // Created By Rohit Singh on 24/08/2022
 
-class Solution {
+class numberCompliment {
     public int findComplement(int num) {
         int mask = 1;
         while (mask<num){
