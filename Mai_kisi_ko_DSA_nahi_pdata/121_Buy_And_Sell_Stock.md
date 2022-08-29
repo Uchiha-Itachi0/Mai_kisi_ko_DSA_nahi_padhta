@@ -74,6 +74,9 @@ And so on.
 At the end we will have the maximum profit we can make.
 
 
+`Time Complexity: O(n^2)`
+`Space Complexity: O(1)`
+
 ## Better approach
 
 `prices = [7, 1, 5, 3, 6, 4]`
@@ -146,6 +149,9 @@ therefore we move our buy pointer to sell pointer and increase sell pointer by 1
 we are at the end of the loop. Therefore, we return max_profit i.e 4
 
 ```
+
+`Time Complexity: O(n)`
+`Space Complexity: O(1)`
 
 ## Code
 
