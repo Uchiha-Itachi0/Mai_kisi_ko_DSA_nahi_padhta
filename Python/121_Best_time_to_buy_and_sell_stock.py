@@ -1,3 +1,6 @@
+# Explanation :
+# https://github.com/Uchiha-Itachi0/Mai_kisi_ko_DSA_nahi_padhta/blob/master/Mai_kisi_ko_DSA_nahi_pdata/121_Buy_And_Sell_Stock.md
+
 # Method 1
 # Time Complexity: O(n^2)
 # Space Complexity: O(1)
