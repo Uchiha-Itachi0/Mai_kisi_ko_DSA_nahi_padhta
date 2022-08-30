@@ -17,7 +17,12 @@ Thumbs.db
 cmake-build-debug
 CMakeLists.txt
 
+#Webstrom
+tsconfig.json
+Javascript
+
 #Pycharm
 venv
+__pycache__
 # Visual Studio Code
 .vscode/
