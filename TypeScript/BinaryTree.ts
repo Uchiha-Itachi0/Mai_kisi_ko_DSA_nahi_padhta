@@ -2,7 +2,7 @@ import Queue from "./Queue";
 import {readdirSync} from "fs";
 import {cursorTo} from "readline";
 
-interface TreeNode<T>{
+export interface TreeNode<T>{
     data: T;
     left: TreeNode<T> | null;
     right: TreeNode<T> | null;
@@ -125,14 +125,3 @@ export default class BST<U>{
         }
     }
 }
-
-
-const bst = new BST<number>();
-
-bst.insert(10);
-bst.insert(6);
-bst.insert(15);
-bst.insert(3)
-bst.insert(8);
-bst.insert(20);
-console.log(bst.inOrder());
