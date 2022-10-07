@@ -1,6 +1,4 @@
 import Queue from "./Queue";
-import {readdirSync} from "fs";
-import {cursorTo} from "readline";
 
 export interface TreeNode<T>{
     data: T;
@@ -95,12 +93,17 @@ export default class BST<U>{
         return result;
     }
 
+
+
     inOrder(): U[]{
         const result: U[] = [];
         this.inOrderHelper(result);
         return result;
     }
 
+    height(): number{
+        return this.heightHelper(this.root);
+    }
     private preorderHelper(result: U[], current: TreeNode<U> | null = this.root){
         if(current !== null) {
             result.push(current.data);
@@ -123,5 +126,12 @@ export default class BST<U>{
             result.push(current.data);
             if(current.right !== null) this.inOrderHelper(result, current.right);
         }
+    }
+
+    private heightHelper(current: TreeNode<U> | null): number{
+        if(current === null) return 0;
+        let leftHeight: number = this.heightHelper(current.left);
+        let rightHeight: number = this.heightHelper(current.right);
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
