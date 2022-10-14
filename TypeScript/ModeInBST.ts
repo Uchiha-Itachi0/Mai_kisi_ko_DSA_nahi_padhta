@@ -15,7 +15,7 @@ function updateStorage(root: TreeNode<number> | null, storage: storageType){
 
 function findMode(root: TreeNode<number> | null): number[] {
     const storage: storageType = {};
-    const ans: number[] = [];
+    const ans: number[] = []
     updateStorage(root, storage);
     let maximum: number = Number.NEGATIVE_INFINITY;
     for(const values of Object.values(storage)){
@@ -30,6 +30,34 @@ function findMode(root: TreeNode<number> | null): number[] {
     }
     return ans;
 
+}
+let prev: TreeNode<number> | null = null;
+let frequency = 1;
+let maxFrequency = 0;
+function modeHelper(root: TreeNode<number> | null,
+                    modes: number[]): void{
+    if(root !== null){
+        if(root.left !== null) modeHelper(root.left, modes);
+        if(prev != null){
+            if(prev.data === root.data) frequency++;
+            else frequency = 1;
+        }
+        if(frequency > maxFrequency){
+            modes.length = 0;
+            modes.push(root.data);
+            maxFrequency = frequency;
+        }
+        else if(frequency === maxFrequency) modes.push(root.data);
+        prev = root;
+        if(root.right !== null) modeHelper(root.right, modes);
+    }
+
+}
+
+function findModeWithoutHashMap(root: TreeNode<number> | null): number[]{
+    let ans: number[] = [];
+    modeHelper(root, ans);
+    return ans;
 }
 
 const root: TreeNode<number> = {
@@ -55,5 +83,11 @@ const root: TreeNode<number> = {
     }
 }
 
-console.log(findMode(root));
+const root2: TreeNode<number> = {
+    data: 1,
+    left: null,
+    right: null
+}
 
+// console.log(findMode(root));
+console.log(findModeWithoutHashMap(root));
